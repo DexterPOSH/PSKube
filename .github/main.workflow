@@ -6,8 +6,5 @@ workflow "pwsh_build" {
 action "build" {
   uses = "./actions/pwshbuild"
   secrets = [
-    "TOKEN",
   ]
 }
-
-action "
