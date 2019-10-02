@@ -4,7 +4,7 @@ workflow "pwsh_build" {
 }
 
 action "build" {
-  uses = "./actions/pwshbuild"
+  uses = "../actions/pwshbuild"
   secrets = [
   ]
 }
