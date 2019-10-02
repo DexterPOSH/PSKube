@@ -1,10 +1,13 @@
-workflow "pwsh_build" {
-  on = "push"
-  resolves = ["build"]
-}
-
 action "build" {
   uses = "./actions/pwshbuild"
-  secrets = [
-  ]
+  secrets = []
+}
+
+workflow "pwshbuild" {
+  resolves = ["./actions/pwshbuild"]
+  on = "push"
+}
+
+action "./actions/pwshbuild" {
+  uses = "./actions/pwshbuild"
 }
