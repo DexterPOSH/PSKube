@@ -9,10 +9,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: [pwsh] Display environment variables
-      run: Get-ChildItem -Path Env:
+    - name: Display environment variables
+      run: |
+        Get-ChildItem -Path Env:
       shell: pwsh
-    - name: [pwsh] Run build script
+    - name: Run build script
       run: |
         $emv:GITHUB_WORKSPACE/build/build.ps1
       shell: pwsh
