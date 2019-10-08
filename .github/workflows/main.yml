@@ -1,0 +1,18 @@
+name: PSKube CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: [pwsh] Display environment variables
+      run: Get-ChildItem -Path Env:
+      shell: pwsh
+    - name: [pwsh] Run build script
+      run: |
+        $emv:GITHUB_WORKSPACE/build/build.ps1
+      shell: pwsh
