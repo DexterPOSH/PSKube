@@ -15,5 +15,5 @@ jobs:
       shell: pwsh
     - name: Run build script
       run: |
-        $emv:GITHUB_WORKSPACE/build/build.ps1
+        $env:GITHUB_WORKSPACE/build/build.ps1
       shell: pwsh
