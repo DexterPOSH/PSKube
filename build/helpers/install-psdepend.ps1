@@ -24,7 +24,7 @@
     #>
     [cmdletbinding()]
     param(
-        [string]$Path = $( Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'PowerShell\Modules')
+        [string]$Path = $($env:PSModulePath -split ';')[0]
     )
     $ExistingProgressPreference = "$ProgressPreference"
     $ProgressPreference = 'SilentlyContinue'
