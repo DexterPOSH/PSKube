@@ -12,6 +12,8 @@ jobs:
     - name: Display environment variables
       run: |
         Get-ChildItem -Path Env:
+        "PS Module Path"
+        $env:PSModulePath -Split ';'
       shell: pwsh
     - name: Run build script
       run: |
